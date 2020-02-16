@@ -1,0 +1,7 @@
+<suite name="Parameter test Suite" verbose="1">
+    <test name="Parameter Test one">
+        <class name = "tests.testng.SearchTests">
+
+        </class>
+    </test>
+</suite>

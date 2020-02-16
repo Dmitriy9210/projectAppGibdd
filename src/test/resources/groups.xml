@@ -1,0 +1,13 @@
+<suite name="Group test Suite" verbose="1">
+    <test name="Groups tests">
+        <groups>
+            <run>
+                <include name="open"/>
+                <exclude name="search"/>
+                <exclude name="searchUIN"/>
+            </run>
+        </groups>
+        <class name="tests.testng.GroupsTests">
+        </class>
+    </test>
+</suite>
