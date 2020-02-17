@@ -1,7 +1,8 @@
 <suite name="Parameter test Suite" verbose="1">
-    <test name="Parameter Test one">
-        <class name = "tests.testng.SearchTests">
-
+    <test name="Parameter Test search">
+        <class name="screensAction.IntroAct">
+            <parameter name = "docSTS" value = "1234567891" />
+            <parameter name = "docVY" value = "9876543210" />
         </class>
     </test>
 </suite>

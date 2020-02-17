@@ -7,7 +7,7 @@
                 <exclude name="searchUIN"/>
             </run>
         </groups>
-        <class name="tests.testng.GroupsTests">
+        <class name="screensAction.IntroAct">
         </class>
     </test>
 </suite>
