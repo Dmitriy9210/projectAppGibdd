@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM 'http://testng.org/testng-1.0.dtd'>
+
+<suite name = "Regression" verbose = "1">
+
+    <suite-files>
+        <suite-file path = "search.xml" />
+        <suite-file path = "open.xml" />
+    </suite-files>
+
+    <!--TODO: пример общих-глобальных параметров -->
+    <parameter name = "someParam" value = "someValue" />
+
+</suite>

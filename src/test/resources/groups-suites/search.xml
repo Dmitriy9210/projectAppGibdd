@@ -1,0 +1,16 @@
+<suite name="Group test Suite" verbose="1">
+    <test name = "Groups tests">
+        <groups>
+            <run>
+                <include name = "search" />
+            </run>
+        </groups>
+        <classes>
+            <class name="screensAction.IntroAct">
+                <parameter name = "docSTS" value = "1234567891" />
+                <parameter name = "docVY" value = "9876543210" />
+                <parameter name = "nomberUIN" value = "18810177180708116003" />
+            </class>
+        </classes>
+    </test>
+</suite>

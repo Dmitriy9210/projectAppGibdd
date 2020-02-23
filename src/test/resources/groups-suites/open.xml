@@ -1,0 +1,11 @@
+<suite name="Group test Suite" verbose="1">
+    <test name = "Groups tests">
+        <classes>
+            <class name = "screensAction.IntroAct">
+                <methods>
+                    <include name="openMenu" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

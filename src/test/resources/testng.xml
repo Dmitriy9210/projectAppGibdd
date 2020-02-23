@@ -1,8 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Parameter test Suite" verbose="1">
     <test name="Parameter Test search">
+        <classes>
         <class name="screensAction.IntroAct">
             <parameter name = "docSTS" value = "1234567891" />
             <parameter name = "docVY" value = "9876543210" />
-        </class>
+            <parameter name = "nomberUIN" value = "18810177180708116003" />
+                    </class>
+        </classes>
     </test>
 </suite>

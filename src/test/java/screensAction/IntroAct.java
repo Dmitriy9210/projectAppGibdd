@@ -15,18 +15,18 @@ public class IntroAct extends IntroSelectors {
     private TestGibdd gibdd = new TestGibdd();
 
 
-    @BeforeMethod
+    @BeforeMethod(groups = "search")
     public void setUp() throws URI.MalformedURIException, MalformedURLException {
         gibdd.setUp();
         gibdd.waiter(By.xpath("//*[contains(@text, 'есть')]"), 50);
     }
 
-    @AfterMethod
+    @AfterMethod(groups = "search")
     public void nextTest() {
         gibdd.nextTest();
     }
 
-    @AfterTest
+    @AfterTest(groups = "search")
     public void closeApp() {
         gibdd.closeApp();
     }
@@ -53,9 +53,9 @@ public class IntroAct extends IntroSelectors {
         gibdd.waiter(By.xpath("//*[contains(@text, 'НАЙТИ')]"), 3).click();
     }
 
-    @Parameters({"docSTS","docVY"})
+    @Parameters({"docSTS", "docVY"})
     @Test(groups = "search")
-    public void searchBothDoc(String docSTS, String docVY)   {
+    public void searchBothDoc(String docSTS, String docVY) {
         WebElement inputSts = gibdd.waiter(By.xpath("//android.view.View[1]/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View[2]/android.widget.EditText"), 20);
         inputSts.sendKeys(docSTS);
         WebElement inputVy = gibdd.waiter(By.xpath("//android.view.View[2]/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View[2]/android.widget.EditText"), 20);
@@ -63,13 +63,15 @@ public class IntroAct extends IntroSelectors {
         gibdd.waiter(By.xpath("//*[contains(@text, 'НАЙТИ')]"), 3).click();
     }
 
+    @Parameters("nomberUIN")
     @Test(groups = "searchUIN")
-    public void searchUin()   {
+    public void searchUin(String nomberUIN) {
         WebElement findUINbtn = gibdd.waiter(By.xpath("//*[contains(@text, 'ОПЛАТИТЬ')]"), 20);
         findUINbtn.click();
-        WebElement findUIN = gibdd.waiter(By.xpath("//android.widget.EditText"), 20);
-        findUIN.sendKeys("18810177180708116003");
-        gibdd.waiter(By.xpath("//*[contains(@text, 'НАЙТИ')]"), 3).click();
+        gibdd.waiter(By.xpath("//*[contains(@text, 'ПО ПОСТА')]"),30);
+        WebElement findUIN = gibdd.waiter(By.xpath("//android.widget.EditText"), 40);
+        findUIN.sendKeys(nomberUIN);
+        gibdd.waiter(By.xpath("//*[contains(@text, 'НАЙТИ')]"), 10).click();
     }
 
 }
