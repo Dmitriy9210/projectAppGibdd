@@ -26,7 +26,7 @@ public class TestGibdd {
         caps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.oplatagosuslug.gibdd");
         caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "MainActivity");
         caps.setCapability(MobileCapabilityType.APP, "D:\\Проекты\\GibddApp\\src\\test\\resources\\App\\app-debug.apk");
-        caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "280");
+        caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "120");
         URL appiumURL = new URL("http://localhost:4723/wd/hub");
 
         driver = new AppiumDriver<MobileElement>(appiumURL, caps);

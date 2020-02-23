@@ -2,6 +2,7 @@ package screensAction;
 
 import com.sun.org.apache.xml.internal.utils.URI;
 import gibdd.TestGibdd;
+import io.qameta.allure.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
@@ -32,6 +33,7 @@ public class IntroAct extends IntroSelectors {
     }
 
     @Test (groups = "open")
+    @Description(value = "Открытие приложения")
     public void openMenu() {
         WebElement buttonMenu = gibdd.waiter(By.xpath("//*[contains(@text, 'menu')]"), 20);
         buttonMenu.click();
@@ -39,6 +41,7 @@ public class IntroAct extends IntroSelectors {
 
     @Parameters("docSTS")
     @Test (groups = "search")
+    @Description(value = "Заполнение полей: СТС")
     public void searchSts(String docSTS)   {
         WebElement inputSts = gibdd.waiter(By.xpath("//android.view.View[1]/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View[2]/android.widget.EditText"), 20);
         inputSts.sendKeys(docSTS);
@@ -47,6 +50,7 @@ public class IntroAct extends IntroSelectors {
 
     @Parameters("docVY")
     @Test (groups = "search")
+    @Description(value = "Заполнение полей: ВУ")
     public void searchVy(String docVY)   {
         WebElement inputVy = gibdd.waiter(By.xpath("//android.view.View[2]/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View[2]/android.widget.EditText"), 20);
         inputVy.sendKeys(docVY);
@@ -55,6 +59,7 @@ public class IntroAct extends IntroSelectors {
 
     @Parameters({"docSTS", "docVY"})
     @Test(groups = "search")
+    @Description(value = "Заполнение полей: СТС и ВУ")
     public void searchBothDoc(String docSTS, String docVY) {
         WebElement inputSts = gibdd.waiter(By.xpath("//android.view.View[1]/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View[2]/android.widget.EditText"), 20);
         inputSts.sendKeys(docSTS);
@@ -65,6 +70,7 @@ public class IntroAct extends IntroSelectors {
 
     @Parameters("nomberUIN")
     @Test(groups = "searchUIN")
+    @Description(value = "Заполнение полей: УИН")
     public void searchUin(String nomberUIN) {
         WebElement findUINbtn = gibdd.waiter(By.xpath("//*[contains(@text, 'ОПЛАТИТЬ')]"), 20);
         findUINbtn.click();
