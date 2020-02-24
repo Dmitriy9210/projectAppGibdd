@@ -5,7 +5,7 @@
         <class name="screensAction.IntroAct">
             <parameter name = "docSTS" value = "1234567891" />
             <parameter name = "docVY" value = "9876543210" />
-            <parameter name = "nomberUIN" value = "18810177180708116003" />
+            <parameter name = "numberUIN" value = "18810177180708116003" />
                     </class>
         </classes>
     </test>
