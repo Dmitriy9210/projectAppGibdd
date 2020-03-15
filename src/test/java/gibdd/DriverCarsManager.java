@@ -14,19 +14,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class TestGibdd {
+public class DriverCarsManager {
 
     private AppiumDriver<MobileElement> driver;
 
     public void setUp() throws URI.MalformedURIException, MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9.0");
-        caps.setCapability(MobileCapabilityType.DEVICE_NAME, "192.168.65.102:5555");
+        caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.0");
+        caps.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5556");
         caps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.oplatagosuslug.gibdd");
         caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "MainActivity");
         caps.setCapability(MobileCapabilityType.APP, "D:\\Проекты\\GibddApp\\src\\test\\resources\\App\\app-debug.apk");
-        caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "120");
+        caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "250");
         URL appiumURL = new URL("http://localhost:4723/wd/hub");
 
         driver = new AppiumDriver<MobileElement>(appiumURL, caps);

@@ -1,7 +1,7 @@
 package screensAction;
 
 import com.sun.org.apache.xml.internal.utils.URI;
-import gibdd.TestGibdd;
+import gibdd.DriverCarsManager;
 import io.qameta.allure.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -13,7 +13,7 @@ import java.net.MalformedURLException;
 public class IntroAct extends IntroSelectors {
 
 
-    private TestGibdd gibdd = new TestGibdd();
+    private DriverCarsManager gibdd = new DriverCarsManager();
 
     @BeforeMethod(groups = "search")
     public void setUp() throws URI.MalformedURIException, MalformedURLException {
@@ -48,7 +48,7 @@ public class IntroAct extends IntroSelectors {
     @Test(groups = "search")
     @Description(value = "Заполнение полей: СТС")
     public void searchSts(String docSTS) {
-        WebElement inputSts = gibdd.waiter(By.xpath("//android.view.View[1]/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View[2]/android.widget.EditText"), 20);
+        WebElement inputSts = gibdd.waiter(By.xpath("//*[contains(@text, 'Свид-во')]/following-sibling::android.view.View/child::android.widget.EditText"), 20);
         inputSts.sendKeys(docSTS);
         gibdd.waiter(By.xpath("//*[contains(@text, 'НАЙТИ')]"), 3).click();
     }
@@ -60,7 +60,7 @@ public class IntroAct extends IntroSelectors {
     @Test(groups = "search")
     @Description(value = "Заполнение полей: ВУ")
     public void searchVy(String docVY) {
-        WebElement inputVy = gibdd.waiter(By.xpath("//android.view.View[2]/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View[2]/android.widget.EditText"), 20);
+        WebElement inputVy = gibdd.waiter(By.xpath("//*[contains(@text, 'Вод. удостоверение')]/following-sibling::android.view.View/child::android.widget.EditText"), 20);
         inputVy.sendKeys(docVY);
         gibdd.waiter(By.xpath("//*[contains(@text, 'НАЙТИ')]"), 3).click();
     }
@@ -72,9 +72,9 @@ public class IntroAct extends IntroSelectors {
     @Test(groups = "search")
     @Description(value = "Заполнение полей: СТС и ВУ")
     public void searchBothDoc(String docSTS, String docVY) {
-        WebElement inputSts = gibdd.waiter(By.xpath("//android.view.View[1]/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View[2]/android.widget.EditText"), 20);
+        WebElement inputSts = gibdd.waiter(By.xpath("//*[contains(@text, 'Свид-во')]/following-sibling::android.view.View/child::android.widget.EditText"), 20);
         inputSts.sendKeys(docSTS);
-        WebElement inputVy = gibdd.waiter(By.xpath("//android.view.View[2]/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View[2]/android.widget.EditText"), 20);
+        WebElement inputVy = gibdd.waiter(By.xpath("//*[contains(@text, 'Вод. удостоверение')]/following-sibling::android.view.View/child::android.widget.EditText"), 20);
         inputVy.sendKeys(docVY);
         gibdd.waiter(By.xpath("//*[contains(@text, 'НАЙТИ')]"), 3).click();
     }
