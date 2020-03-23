@@ -6,22 +6,27 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static org.openqa.selenium.By.xpath;
+
 public class IntroSelectors {
 
-    private WebDriver driver;
+//    private WebDriver driver;
 
-    By menuBtn = By.id("//*[contains(@text, 'menu')]");
+    protected By menuBtn = xpath("//*[contains(@text, 'menu')]");
 
 
 
-    @FindBy(xpath = "//*[contains(@text, 'есть')]")
-    protected WebElement waitPicture;
+    protected By waitPicture = xpath( "//*[contains(@text, 'есть')]");
 
-//    @FindBy(xpath = "//*[contains(@text, 'menu')]")
-//    public  WebElement menuBtn;
+    protected By inputSTS = xpath( "//*[contains(@text, 'регистрац')]");
 
-    @FindBy(xpath = "//*[contains(@text, 'регистрац')]")
-    protected WebElement inputSTS;
+    protected By inputSTS2 = xpath( "//*[contains(@text, 'регистрац')]");
+
+    protected By waitPicture = xpath( "//*[contains(@text, 'есть')]");
+
+    protected By waitPicture = xpath( "//*[contains(@text, 'есть')]");
+
+    protected By waitPicture = xpath( "//*[contains(@text, 'есть')]");
 
     @FindBy(xpath = "//android.view.View[1]/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View[2]/android.widget.EditText")
     protected WebElement inputSTS2;
@@ -45,9 +50,9 @@ public class IntroSelectors {
     protected WebElement inputUin2;
 
 
-    public IntroSelectors (WebDriver driver) {
-        PageFactory.initElements(driver, this);
-        this.driver = driver;
-    }
+//    public IntroSelectors (WebDriver driver) {
+//        PageFactory.initElements(driver, this);
+//        this.driver = driver;
+//    }
 
 }

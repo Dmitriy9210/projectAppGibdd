@@ -5,6 +5,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -35,10 +36,10 @@ public class DriverManager {
         return driver;
     }
 
-    public void waiter(WebElement element, int time) {
+    public WebElement waiter(By by, int time) {
         WebDriverWait wait = new WebDriverWait(driver, time);
-         wait.until(
-                ExpectedConditions.visibilityOf(element)
+        return wait.until(
+                ExpectedConditions.presenceOfElementLocated(by)
         );
     }
 
