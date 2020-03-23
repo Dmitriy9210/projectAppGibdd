@@ -1,5 +1,6 @@
 package screensSelectors;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,11 +10,15 @@ public class IntroSelectors {
 
     private WebDriver driver;
 
+    By menuBtn = By.id("//*[contains(@text, 'menu')]");
+
+
+
     @FindBy(xpath = "//*[contains(@text, 'есть')]")
     protected WebElement waitPicture;
 
-    @FindBy(xpath = "//*[contains(@text, 'menu')]")
-    public  WebElement menuBtn;
+//    @FindBy(xpath = "//*[contains(@text, 'menu')]")
+//    public  WebElement menuBtn;
 
     @FindBy(xpath = "//*[contains(@text, 'регистрац')]")
     protected WebElement inputSTS;

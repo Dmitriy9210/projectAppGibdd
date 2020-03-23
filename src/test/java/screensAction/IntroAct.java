@@ -45,7 +45,7 @@ public class IntroAct {
         AppiumDriver driver = (new DriverManager()).getDriver();
         IntroSelectors introSelectors = new IntroSelectors(driver);
 //        WebElement buttonMenu =
-                gibdd.waiter(introSelectors.menuBtn, 20);
+                gibdd.waiter(menuBtn, 20);
         introSelectors.menuBtn.click();
     }
 
