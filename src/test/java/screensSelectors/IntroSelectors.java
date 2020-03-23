@@ -1,16 +1,19 @@
 package screensSelectors;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class IntroSelectors {
 
+    private WebDriver driver;
 
     @FindBy(xpath = "//*[contains(@text, 'есть')]")
     protected WebElement waitPicture;
 
     @FindBy(xpath = "//*[contains(@text, 'menu')]")
-    protected WebElement menuBtn;
+    public  WebElement menuBtn;
 
     @FindBy(xpath = "//*[contains(@text, 'регистрац')]")
     protected WebElement inputSTS;
@@ -35,5 +38,11 @@ public class IntroSelectors {
 
     @FindBy(xpath = "//android.widget.EditText")
     protected WebElement inputUin2;
+
+
+    public IntroSelectors (WebDriver driver) {
+        PageFactory.initElements(driver, this);
+        this.driver = driver;
+    }
 
 }
