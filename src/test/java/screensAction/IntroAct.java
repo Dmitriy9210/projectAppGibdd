@@ -19,7 +19,6 @@ public class IntroAct extends IntroSelectors{
     @BeforeMethod(groups = "search")
     public void setUp() throws URI.MalformedURIException, MalformedURLException, InterruptedException {
         gibdd.setUp();
-        Thread.sleep(10000);
         gibdd.waiter(waitPicture, 90);
     }
 
