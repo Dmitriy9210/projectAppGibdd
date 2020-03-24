@@ -1,2 +1,9 @@
-# Default ignored files
+.idea/
+.gitignore
+.gradle/
+gradle/
+.build/
+.out/
+.allure-results/
+target/
 /workspace.xml
