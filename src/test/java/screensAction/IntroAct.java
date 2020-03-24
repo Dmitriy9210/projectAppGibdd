@@ -19,7 +19,6 @@ public class IntroAct extends IntroSelectors{
     @BeforeMethod(groups = "search")
     public void setUp() throws URI.MalformedURIException, MalformedURLException, InterruptedException {
         gibdd.setUp();
-        Thread.sleep(10000);
         gibdd.waiter(waitPicture, 90);
     }
 
@@ -39,8 +38,8 @@ public class IntroAct extends IntroSelectors{
     @Test(groups = "open")
     @Description(value = "Открытие приложения")
     public void openMenu() {
-        WebElement buttonMenu = gibdd.waiter(menuBtn, 20);
-        buttonMenu.click();
+        WebElement buttonMenuOpen = gibdd.waiter(menuBtn, 20);
+        buttonMenuOpen.click();
     }
 
     @Owner(value = "Дмитрий Авраменко")
@@ -91,8 +90,8 @@ public class IntroAct extends IntroSelectors{
         WebElement findUinBtn = gibdd.waiter(buttonSearchUin, 20);
         findUinBtn.click();
         gibdd.waiter(goToPagePayUin, 30);
-        WebElement findUinInput = gibdd.waiter(inputUin, 40);
-        findUinInput.sendKeys(numberUIN);
+        WebElement writeUinInput = gibdd.waiter(inputUin, 40);
+        writeUinInput.sendKeys(numberUIN);
         gibdd.waiter(findBtn, 3).click();
     }
 
