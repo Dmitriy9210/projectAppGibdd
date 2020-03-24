@@ -1,9 +1,10 @@
+/workspace.xml
+
 .idea/
-.gitignore
+#.gitignore
 .gradle/
 gradle/
 .build/
 .out/
 .allure-results/
 target/
-/workspace.xml
