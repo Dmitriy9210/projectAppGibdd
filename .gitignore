@@ -5,6 +5,5 @@
 .gradle/
 gradle/
 .build/
-.out/
 .allure-results/
 target/
