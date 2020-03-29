@@ -1,9 +1,9 @@
-package screensSelectors;
+package screensPages;
 
 import org.openqa.selenium.By;
 import static org.openqa.selenium.By.xpath;
 
-public class IntroSelectors {
+public class IntroPage {
 
     protected By menuBtn = xpath("//*[contains(@text, 'menu')]");
     protected By waitPicture = xpath( "//*[contains(@text, 'есть')]");
@@ -13,5 +13,7 @@ public class IntroSelectors {
     protected By buttonSearchUin = xpath( "//*[contains(@text, 'ОПЛАТИТЬ')]");
     protected By inputUin = xpath( "//android.widget.EditText");
     protected By goToPagePayUin = xpath( "//*[contains(@text, 'ПО ПОСТА')]");
+
+
 
 }

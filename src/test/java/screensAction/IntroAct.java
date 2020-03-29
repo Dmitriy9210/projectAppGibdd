@@ -2,17 +2,15 @@ package screensAction;
 
 import com.sun.org.apache.xml.internal.utils.URI;
 import gibdd.DriverManager;
-import io.appium.java_client.AppiumDriver;
 import io.qameta.allure.*;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
-import screensSelectors.IntroSelectors;
+import screensPages.IntroPage;
 
 import java.net.MalformedURLException;
 
 
-public class IntroAct extends IntroSelectors{
+public class IntroAct extends IntroPage {
 
     private DriverManager gibdd = new DriverManager();
 
