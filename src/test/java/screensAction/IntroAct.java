@@ -37,7 +37,6 @@ public class IntroAct {
     }
 
 
-
     @Story(value = "Страница Интро")
     @Test()
     @Description(value = "Открытие приложения")
@@ -77,5 +76,4 @@ public class IntroAct {
     public void searchUin(String numberUIN) {
         new IntroPage(driver).searchForUin(numberUIN);
     }
-
 }
