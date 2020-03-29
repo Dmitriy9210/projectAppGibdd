@@ -1,5 +1,7 @@
 package screensPages;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 
 import static org.openqa.selenium.By.xpath;
@@ -15,9 +17,13 @@ public class IntroPage extends AbstractPage {
     private By goToPagePayUin = xpath("//*[contains(@text, 'ПО ПОСТА')]");
     private By inputUin = xpath("//android.widget.EditText");
 
+    public IntroPage(AppiumDriver<MobileElement> driver) {
+        super(driver);
+    }
+
 
     public void waitBtnMenu() { //находим кнопку Меню
-        waitElement(menuBtn, 30);
+        waitElement(menuBtn, 90);
     }
 
     public void waitPicturesOnMainScreen() {//ожидаем картинку Авто с мигалками

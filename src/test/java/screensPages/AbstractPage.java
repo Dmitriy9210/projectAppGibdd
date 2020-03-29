@@ -1,6 +1,5 @@
 package screensPages;
 
-import gibdd.DriverManager;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
@@ -11,9 +10,15 @@ import org.testng.Assert;
 
 public class AbstractPage {
 
-    private AppiumDriver<MobileElement> driver;
-    private DriverManager driverManager = new DriverManager();
+    protected AppiumDriver<MobileElement> driver;
 
+    public void setDriver(AppiumDriver<MobileElement> driver) {
+        this.driver = driver;
+    }
+
+    public AbstractPage (AppiumDriver<MobileElement> driver){
+        this.driver = driver;
+    }
 
     public void clickButton(By by, int time) {
         waitElement(by, time).click();
@@ -24,7 +29,8 @@ public class AbstractPage {
         element.sendKeys(text);
         element.isDisplayed();
         String textField = getValue(by,5);
-        Assert.assertEquals("Введенное значние не равно отображаемому: " + text + " и " + textField, text, textField);
+        textField = textField.replaceAll("\\D", "");
+        Assert.assertEquals(text, textField, "Введенное значние не равно отображаемому: " + text + " и " + textField);
     }
 
     public String getValue(By by, int time){
@@ -36,12 +42,9 @@ public class AbstractPage {
     }
 
     public WebElement waitElement(By by, int time) {
-        this.driver = driverManager.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, time);
         return wait.until(
                 ExpectedConditions.presenceOfElementLocated(by)
         );
     }
-
-
 }

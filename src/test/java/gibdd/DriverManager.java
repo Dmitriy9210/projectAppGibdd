@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import screensPages.AbstractPage;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -18,7 +19,11 @@ public class DriverManager {
 
     private AppiumDriver<MobileElement> driver;
 
-    public void setUp() throws URI.MalformedURIException, MalformedURLException {
+    public DriverManager(AppiumDriver<MobileElement> driver){
+        this.driver = driver;
+    }
+
+    public void setUp() throws  MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7.0");
@@ -35,13 +40,6 @@ public class DriverManager {
     public AppiumDriver<MobileElement> getDriver() {
         return driver;
     }
-
-//    public WebElement waiter(By by, int time) {
-//        WebDriverWait wait = new WebDriverWait(driver, time);
-//        return wait.until(
-//                ExpectedConditions.presenceOfElementLocated(by)
-//        );
-//    }
 
     public void nextTest() {
         driver.resetApp();
