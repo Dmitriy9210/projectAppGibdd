@@ -25,7 +25,7 @@ public class DriverManager {
         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
         caps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.oplatagosuslug.gibdd");
         caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "MainActivity");
-        caps.setCapability(MobileCapabilityType.APP, "/Users/macos/Documents/GitHub/gibdd/src/test/resources/App/app-debug.apk");
+        caps.setCapability(MobileCapabilityType.APP, "/Users/macos/Documents/GitHub/gibdd2/src/test/resources/App/app-debug.apk");
         caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "250");
         URL appiumURL = new URL("http://localhost:4723/wd/hub");
 
@@ -36,12 +36,12 @@ public class DriverManager {
         return driver;
     }
 
-    public WebElement waiter(By by, int time) {
-        WebDriverWait wait = new WebDriverWait(driver, time);
-        return wait.until(
-                ExpectedConditions.presenceOfElementLocated(by)
-        );
-    }
+//    public WebElement waiter(By by, int time) {
+//        WebDriverWait wait = new WebDriverWait(driver, time);
+//        return wait.until(
+//                ExpectedConditions.presenceOfElementLocated(by)
+//        );
+//    }
 
     public void nextTest() {
         driver.resetApp();

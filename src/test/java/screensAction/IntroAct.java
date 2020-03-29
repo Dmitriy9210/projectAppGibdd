@@ -10,87 +10,67 @@ import screensPages.IntroPage;
 import java.net.MalformedURLException;
 
 
-public class IntroAct extends IntroPage {
+public class IntroAct {
 
-    private DriverManager gibdd = new DriverManager();
+    private DriverManager driverManager = new DriverManager();
+    private IntroPage introPage = new IntroPage();
 
-    @BeforeMethod(groups = "search")
+    @BeforeMethod()
     public void setUp() throws URI.MalformedURIException, MalformedURLException, InterruptedException {
-        gibdd.setUp();
-        gibdd.waiter(waitPicture, 90);
+        driverManager.setUp();
+        introPage.waitBtnMenu();
     }
 
-    @AfterMethod(groups = "search")
+    @AfterMethod()
     public void nextTest() {
-        gibdd.nextTest();
+        driverManager.nextTest();
     }
 
-    @AfterTest(groups = "search")
+    @AfterTest()
     public void closeApp() {
-        gibdd.closeApp();
+        driverManager.closeApp();
     }
 
-    @Owner(value = "Дмитрий Авраменко")
-    @Severity(value = SeverityLevel.CRITICAL)
+
+
     @Story(value = "Страница Интро")
-    @Test(groups = "open")
+    @Test()
     @Description(value = "Открытие приложения")
     public void openMenu() {
-        WebElement buttonMenuOpen = gibdd.waiter(menuBtn, 20);
-        buttonMenuOpen.click();
+        introPage.waitPicturesOnMainScreen();
+
     }
 
-    @Owner(value = "Дмитрий Авраменко")
-    @Severity(value = SeverityLevel.MINOR)
     @Story(value = "Страница Интро")
     @Parameters("docSTS")
-    @Test(groups = "search")
+    @Test()
     @Description(value = "Заполнение полей: СТС")
     public void searchSts(String docSTS) {
-        WebElement writeInInputSts = gibdd.waiter(inputSts, 20);
-        writeInInputSts.sendKeys(docSTS);
-        gibdd.waiter(findBtn, 3).click();
+        introPage.inputFieldStsAndClickSearch(docSTS);
     }
 
-    @Owner(value = "Дмитрий Авраменко")
-    @Severity(value = SeverityLevel.NORMAL)
     @Story(value = "Страница Интро")
     @Parameters("docVY")
-    @Test(groups = "search")
+    @Test()
     @Description(value = "Заполнение полей: ВУ")
     public void searchVy(String docVY) {
-        WebElement writeInInputVy = gibdd.waiter(inputDriver, 20);
-        writeInInputVy.sendKeys(docVY);
-        gibdd.waiter(findBtn, 3).click();
+       introPage.inputFieldLicenceDriverAndClickSerch(docVY);
     }
 
-    @Owner(value = "Дмитрий Авраменко")
-    @Severity(value = SeverityLevel.MINOR)
     @Story(value = "Страница Интро")
     @Parameters({"docSTS", "docVY"})
-    @Test(groups = "search")
+    @Test()
     @Description(value = "Заполнение полей: СТС и ВУ")
     public void searchBothDoc(String docSTS, String docVY) {
-        WebElement writeInInputSts = gibdd.waiter(inputSts, 20);
-        writeInInputSts.sendKeys(docSTS);
-        WebElement writeInInputVy = gibdd.waiter(inputDriver, 20);
-        writeInInputVy.sendKeys(docVY);
-        gibdd.waiter(findBtn, 3).click();
+        introPage.inputBothField(docSTS,docVY);
     }
 
-    @Owner(value = "Дмитрий Авраменко")
-    @Severity(value = SeverityLevel.MINOR)
     @Story(value = "Страница Интро")
     @Parameters("numberUIN")
-    @Test(groups = "searchUIN")
+    @Test()
     @Description(value = "Заполнение полей: УИН")
     public void searchUin(String numberUIN) {
-        WebElement findUinBtn = gibdd.waiter(buttonSearchUin, 20);
-        findUinBtn.click();
-        gibdd.waiter(goToPagePayUin, 30);
-        WebElement writeUinInput = gibdd.waiter(inputUin, 40);
-        writeUinInput.sendKeys(numberUIN);
-        gibdd.waiter(findBtn, 3).click();
+       introPage.searchForUin(numberUIN);
     }
 
 }
