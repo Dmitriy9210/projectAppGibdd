@@ -2,8 +2,9 @@ package screensAction;
 
 import com.sun.org.apache.xml.internal.utils.URI;
 import gibdd.DriverManager;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.qameta.allure.*;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
 import screensPages.IntroPage;
 
@@ -11,13 +12,17 @@ import java.net.MalformedURLException;
 
 
 public class IntroAct {
+    private AppiumDriver<MobileElement> driver;
 
-    private DriverManager driverManager = new DriverManager();
-    private IntroPage introPage = new IntroPage();
+
+    private DriverManager driverManager = new DriverManager(driver);
+//    private IntroPage introPage = new IntroPage(driver);
 
     @BeforeMethod()
     public void setUp() throws URI.MalformedURIException, MalformedURLException, InterruptedException {
         driverManager.setUp();
+        this.driver = driverManager.getDriver();
+        IntroPage introPage = new IntroPage(driver);
         introPage.waitBtnMenu();
     }
 
@@ -37,7 +42,7 @@ public class IntroAct {
     @Test()
     @Description(value = "Открытие приложения")
     public void openMenu() {
-        introPage.waitPicturesOnMainScreen();
+        new IntroPage(driver).waitPicturesOnMainScreen();
 
     }
 
@@ -46,7 +51,7 @@ public class IntroAct {
     @Test()
     @Description(value = "Заполнение полей: СТС")
     public void searchSts(String docSTS) {
-        introPage.inputFieldStsAndClickSearch(docSTS);
+        new IntroPage(driver).inputFieldStsAndClickSearch(docSTS);
     }
 
     @Story(value = "Страница Интро")
@@ -54,7 +59,7 @@ public class IntroAct {
     @Test()
     @Description(value = "Заполнение полей: ВУ")
     public void searchVy(String docVY) {
-       introPage.inputFieldLicenceDriverAndClickSerch(docVY);
+        new IntroPage(driver).inputFieldLicenceDriverAndClickSerch(docVY);
     }
 
     @Story(value = "Страница Интро")
@@ -62,7 +67,7 @@ public class IntroAct {
     @Test()
     @Description(value = "Заполнение полей: СТС и ВУ")
     public void searchBothDoc(String docSTS, String docVY) {
-        introPage.inputBothField(docSTS,docVY);
+        new IntroPage(driver).inputBothField(docSTS,docVY);
     }
 
     @Story(value = "Страница Интро")
@@ -70,7 +75,7 @@ public class IntroAct {
     @Test()
     @Description(value = "Заполнение полей: УИН")
     public void searchUin(String numberUIN) {
-       introPage.searchForUin(numberUIN);
+        new IntroPage(driver).searchForUin(numberUIN);
     }
 
 }
