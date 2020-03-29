@@ -1,7 +1,7 @@
 /workspace.xml
 
 .idea/
-.gitignore
+#.gitignore
 .gradle/
 gradle/
 .build/
@@ -9,3 +9,6 @@ gradle/
 target/
 allure-results/
 out/
+build/
+gradlew.bat
+gradlew
