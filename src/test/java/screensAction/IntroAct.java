@@ -7,6 +7,7 @@ import io.appium.java_client.MobileElement;
 import io.qameta.allure.*;
 import org.testng.annotations.*;
 import screensPages.IntroPage;
+import screensPages.MenuPage;
 
 import java.net.MalformedURLException;
 
@@ -22,8 +23,8 @@ public class IntroAct {
     public void setUp() throws URI.MalformedURIException, MalformedURLException, InterruptedException {
         driverManager.setUp();
         this.driver = driverManager.getDriver();
-        IntroPage introPage = new IntroPage(driver);
-        introPage.waitBtnMenu();
+        MenuPage menuPage = new MenuPage(driver);
+        menuPage.waitBtnMenu();
     }
 
     @AfterMethod()
@@ -42,7 +43,6 @@ public class IntroAct {
     @Description(value = "Открытие приложения")
     public void openMenu() {
         new IntroPage(driver).waitPicturesOnMainScreen();
-
     }
 
     @Story(value = "Страница Интро")

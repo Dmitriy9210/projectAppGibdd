@@ -26,7 +26,7 @@ public class DriverManager {
     public void setUp() throws  MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7.0");
+        caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9.0");
         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
         caps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.oplatagosuslug.gibdd");
         caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "MainActivity");

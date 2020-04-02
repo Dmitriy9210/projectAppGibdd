@@ -8,7 +8,8 @@ import static org.openqa.selenium.By.xpath;
 
 public class IntroPage extends AbstractPage {
 
-    private By menuBtn = xpath("//*[contains(@text, 'menu')]");
+    private MenuPage menuPage = new MenuPage(driver);
+
     private By waitPicture = xpath("//*[contains(@text, 'есть')]");
     private By inputSts = xpath("//*[contains(@text, 'Свид-во')]/following-sibling::android.view.View/child::android.widget.EditText");
     private By inputLicenceDriver = xpath("//*[contains(@text, 'Вод. удостоверение')]/following-sibling::android.view.View/child::android.widget.EditText");
@@ -22,12 +23,10 @@ public class IntroPage extends AbstractPage {
     }
 
 
-    public void waitBtnMenu() { //находим кнопку Меню
-        waitElement(menuBtn, 90);
-    }
+
 
     public void waitPicturesOnMainScreen() {//ожидаем картинку Авто с мигалками
-        waitBtnMenu();
+        menuPage.waitBtnMenu();
         waitElement(waitPicture, 10);
     }
 
