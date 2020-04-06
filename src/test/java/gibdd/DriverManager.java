@@ -16,10 +16,14 @@ import java.net.URL;
 
 public class DriverManager {
 
+
     private AppiumDriver<MobileElement> driver;
 
     public DriverManager(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
+    }
+    public DriverManager() {
+
     }
 
     public void setUp() throws MalformedURLException {

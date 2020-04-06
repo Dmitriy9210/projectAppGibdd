@@ -6,30 +6,25 @@ import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
 
 public class DotTestListener extends TestListenerAdapter {
-    private int m_count = 0;
 
     private AppiumDriver<MobileElement> driver;
 
     @Override
     public void onTestFailure(ITestResult tr) {
+        System.out.print("Тест Завален ");
         DriverManager driverManager =new DriverManager(driver);
                 driverManager.takeScreenShot();
     }
 
     @Override
     public void onTestSkipped(ITestResult tr) {
-        System.out.print("dsdsds");
+        System.out.print("Тест пропущен");
     }
 
     @Override
     public void onTestSuccess(ITestResult tr) {
-        System.out.print("kfkfkf");
+        System.out.print("Тест Пройден");
     }
 
-    private void log(String string) {
-        System.out.print(string);
-        if (++m_count % 40 == 0) {
-            System.out.println("");
-        }
-    }
+
 }

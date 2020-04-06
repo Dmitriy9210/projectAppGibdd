@@ -32,7 +32,6 @@ public class MenuAct {
 
     @AfterMethod()
     public void nextTest() {
-        driverManager.takeScreenShot();
         driverManager.nextTest();
     }
 

@@ -30,4 +30,8 @@ dependencies {
     compile group: 'io.qameta.allure', name: 'allure-testng', version: '2.13.1'
 //    https://mvnrepository.com/artifact/ru.yandex.qatools.allure/allure-testng-adaptor
     compile group: 'ru.yandex.qatools.allure', name: 'allure-testng-adaptor', version: '1.5.4'
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
+    testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.30'
+
+
 }
