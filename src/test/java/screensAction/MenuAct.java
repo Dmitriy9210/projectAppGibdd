@@ -1,17 +1,20 @@
 package screensAction;
 
 import com.sun.org.apache.xml.internal.utils.URI;
+import gibdd.DotTestListener;
 import gibdd.DriverManager;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.qameta.allure.Attachment;
 import io.qameta.allure.Description;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.*;
 import screensPages.MenuPage;
 
 import java.net.MalformedURLException;
+
+@Listeners({DotTestListener.class})
 
 public class MenuAct {
     private AppiumDriver<MobileElement> driver;
@@ -108,5 +111,10 @@ public class MenuAct {
     public void openAnotherAppBtn() {
         MenuPage menuPage = new MenuPage(driver);
         menuPage.clickAnotherAppBtn();
+    }
+
+    @Attachment(type = "image/png")
+    public byte[] makeScreenshot() {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 }

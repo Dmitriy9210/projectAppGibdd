@@ -52,7 +52,7 @@ public class DriverManager {
         try {
             File screenshot = ((TakesScreenshot) driver).
                     getScreenshotAs(OutputType.FILE);
-            String path = "./target/screenshots/" + screenshot.getName();
+            String path = "./target/screenshots/fails/" + screenshot.getName();
             FileUtils.copyFile(screenshot, new File(path));
         } catch (IOException e) {
             e.printStackTrace();
