@@ -13,23 +13,23 @@ public class MenuPage extends AbstractPage {
     }
 
     private By menuBtn = xpath("//*[contains(@text, 'menu')]");
-    private By checkFinesBtn = xpath("//*[contains(@text, 'Проверка штрафов')]");
-    private By paidForNumberUinBtn = xpath("//*[contains(@text, 'Оплата по постановлению')]");
-    private By historyPay = xpath("//*[contains(@text, 'История')]");
-    private By driversAndCarsBtn = xpath("//*[contains(@text, 'Водители и ТС')]");
-    private By bankCardBtn = xpath("//*[contains(@text, 'Банковская карта')]");
-    private By helpBtn = xpath("//*[contains(@text, 'Помощь')]");
-    private By juristBtn = xpath("//*[contains(@text, 'Консультация юриста')]");
-    private By rateAppBtn = xpath("//*[contains(@text, 'Оценить приложение')]");
-    private By shareBtn = xpath("//*[contains(@text, 'Поделиться')]");
-    private By anotherAppBtn = xpath("//*[contains(@text, 'Другие приложения')]");
+    private By checkFinesBtn = xpath("//*[contains(@text, 'РџСЂРѕРІРµСЂРєР° С€С‚СЂР°С„РѕРІ')]");
+    private By paidForNumberUinBtn = xpath("//*[contains(@text, 'РћРїР»Р°С‚Р° РїРѕ РїРѕСЃС‚Р°РЅРѕРІР»РµРЅРёСЋ')]");
+    private By historyPay = xpath("//*[contains(@text, 'РСЃС‚РѕСЂРёСЏ')]");
+    private By driversAndCarsBtn = xpath("//*[contains(@text, 'Р’РѕРґРёС‚РµР»Рё Рё РўРЎ')]");
+    private By bankCardBtn = xpath("//*[contains(@text, 'Р‘Р°РЅРєРѕРІСЃРєР°СЏ РєР°СЂС‚Р°')]");
+    private By helpBtn = xpath("//*[contains(@text, 'РџРѕРјРѕС‰СЊ')]");
+    private By juristBtn = xpath("//*[contains(@text, 'РљРѕРЅСЃСѓР»СЊС‚Р°С†РёСЏ СЋСЂРёСЃС‚Р°')]");
+    private By rateAppBtn = xpath("//*[contains(@text, 'РћС†РµРЅРёС‚СЊ РїСЂРёР»РѕР¶РµРЅРёРµ')]");
+    private By shareBtn = xpath("//*[contains(@text, 'РџРѕРґРµР»РёС‚СЊСЃСЏ')]");
+    private By anotherAppBtn = xpath("//*[contains(@text, 'Р”СЂСѓРіРёРµ РїСЂРёР»РѕР¶РµРЅРёСЏ')]");
 
 
-    public void waitBtnMenu() { //находим кнопку Меню
+    public void waitBtnMenu() { //РЅР°С…РѕРґРёРј РєРЅРѕРїРєСѓ РњРµРЅСЋ
         waitElement(menuBtn, 90);
     }
 
-    public void clickBtnMenu() { //находим кнопку Меню
+    public void clickBtnMenu() { //РЅР°С…РѕРґРёРј РєРЅРѕРїРєСѓ РњРµРЅСЋ
         waitBtnMenu();
         clickButton(menuBtn, 10);
     }

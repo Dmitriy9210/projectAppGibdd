@@ -10,12 +10,12 @@ public class IntroPage extends AbstractPage {
 
     private MenuPage menuPage = new MenuPage(driver);
 
-    private By waitPicture = xpath("//*[contains(@text, 'есть')]");
-    private By inputSts = xpath("//*[contains(@text, 'Свид-во')]/following-sibling::android.view.View/child::android.widget.EditText");
-    private By inputLicenceDriver = xpath("//*[contains(@text, 'Вод. удостоверение')]/following-sibling::android.view.View/child::android.widget.EditText");
-    private By findBtn = xpath("//*[contains(@text, 'НАЙТИ')]");
-    private By buttonSearchUin = xpath("//*[contains(@text, 'ОПЛАТИТЬ')]");
-    private By goToPagePayUin = xpath("//*[contains(@text, 'ПО ПОСТА')]");
+    private By waitPicture = xpath("//*[contains(@text, 'РµСЃС‚СЊ')]");
+    private By inputSts = xpath("//*[contains(@text, 'РЎРІРёРґ-РІРѕ')]/following-sibling::android.view.View/child::android.widget.EditText");
+    private By inputLicenceDriver = xpath("//*[contains(@text, 'Р’РѕРґ. СѓРґРѕСЃС‚РѕРІРµСЂРµРЅРёРµ')]/following-sibling::android.view.View/child::android.widget.EditText");
+    private By findBtn = xpath("//*[contains(@text, 'РќРђР™РўР')]");
+    private By buttonSearchUin = xpath("//*[contains(@text, 'РћРџР›РђРўРРўР¬')]");
+    private By goToPagePayUin = xpath("//*[contains(@text, 'РџРћВ РџРћРЎРўРђ')]");
     private By inputUin = xpath("//android.widget.EditText");
 
     public IntroPage(AppiumDriver<MobileElement> driver) {
@@ -25,26 +25,26 @@ public class IntroPage extends AbstractPage {
 
 
 
-    public void waitPicturesOnMainScreen() {//ожидаем картинку Авто с мигалками
+    public void waitPicturesOnMainScreen() {//РѕР¶РёРґР°РµРј РєР°СЂС‚РёРЅРєСѓ РђРІС‚Рѕ СЃ РјРёРіР°Р»РєР°РјРё
         menuPage.waitBtnMenu();
         waitElement(waitPicture, 10);
     }
 
-    private void inputFieldSts(String text) { // Заполняем СТС без поиска
+    private void inputFieldSts(String text) { // Р—Р°РїРѕР»РЅСЏРµРј РЎРўРЎ Р±РµР· РїРѕРёСЃРєР°
         waitPicturesOnMainScreen();
         sendValue(inputSts, 20, text);
     }
 
-    private void inputFieldLicenceDriver(String text) { // Заполняем ВУ без поиска
+    private void inputFieldLicenceDriver(String text) { // Р—Р°РїРѕР»РЅСЏРµРј Р’РЈ Р±РµР· РїРѕРёСЃРєР°
         waitPicturesOnMainScreen();
         sendValue(inputLicenceDriver, 20, text);
     }
 
-    private void clickBtnSearch() { //Нажимаем кнопку поиска
+    private void clickBtnSearch() { //РќР°Р¶РёРјР°РµРј РєРЅРѕРїРєСѓ РїРѕРёСЃРєР°
         clickButton(findBtn, 10);
     }
 
-    private void goToFindForUin() {//Переходим на экран заполнения УИН без заполнения
+    private void goToFindForUin() {//РџРµСЂРµС…РѕРґРёРј РЅР° СЌРєСЂР°РЅ Р·Р°РїРѕР»РЅРµРЅРёСЏ РЈРРќ Р±РµР· Р·Р°РїРѕР»РЅРµРЅРёСЏ
         waitPicturesOnMainScreen();
         clickButton(buttonSearchUin, 10);
         waitElement(goToPagePayUin, 10);
@@ -52,28 +52,28 @@ public class IntroPage extends AbstractPage {
         waitElement(findBtn, 10);
     }
 
-    private void inputFieldUin(String text) { //Заполняем УИН
+    private void inputFieldUin(String text) { //Р—Р°РїРѕР»РЅСЏРµРј РЈРРќ
         goToFindForUin();
         sendValue(inputUin, 20, text);
     }
 
-    public void inputFieldStsAndClickSearch(String text) { //Ищем начисления по СТС
+    public void inputFieldStsAndClickSearch(String text) { //РС‰РµРј РЅР°С‡РёСЃР»РµРЅРёСЏ РїРѕ РЎРўРЎ
         inputFieldSts(text);
         clickBtnSearch();
     }
 
-    public void inputFieldLicenceDriverAndClickSerch(String text) { //Ищем начисления по ВУ
+    public void inputFieldLicenceDriverAndClickSerch(String text) { //РС‰РµРј РЅР°С‡РёСЃР»РµРЅРёСЏ РїРѕ Р’РЈ
         inputFieldLicenceDriver(text);
         clickBtnSearch();
     }
 
-    public void inputBothField(String textSts, String textLicense) { //Ищем начисления по СТС и ВУ
+    public void inputBothField(String textSts, String textLicense) { //РС‰РµРј РЅР°С‡РёСЃР»РµРЅРёСЏ РїРѕ РЎРўРЎ Рё Р’РЈ
         inputFieldSts(textSts);
         inputFieldLicenceDriver(textLicense);
         clickBtnSearch();
     }
 
-    public void searchForUin(String text) { //Ищем начисления по УИН
+    public void searchForUin(String text) { //РС‰РµРј РЅР°С‡РёСЃР»РµРЅРёСЏ РїРѕ РЈРРќ
         inputFieldUin(text);
         clickBtnSearch();
     }

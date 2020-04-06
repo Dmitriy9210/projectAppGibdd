@@ -38,41 +38,41 @@ public class IntroAct {
     }
 
 
-    @Story(value = "Страница Интро")
+    @Story(value = "РЎС‚СЂР°РЅРёС†Р° РРЅС‚СЂРѕ")
     @Test()
-    @Description(value = "Открытие приложения")
+    @Description(value = "РћС‚РєСЂС‹С‚РёРµ РїСЂРёР»РѕР¶РµРЅРёСЏ")
     public void openMenu() {
         new IntroPage(driver).waitPicturesOnMainScreen();
     }
 
-    @Story(value = "Страница Интро")
+    @Story(value = "РЎС‚СЂР°РЅРёС†Р° РРЅС‚СЂРѕ")
     @Parameters("docSTS")
     @Test()
-    @Description(value = "Заполнение полей: СТС")
+    @Description(value = "Р—Р°РїРѕР»РЅРµРЅРёРµ РїРѕР»РµР№: РЎРўРЎ")
     public void searchSts(String docSTS) {
         new IntroPage(driver).inputFieldStsAndClickSearch(docSTS);
     }
 
-    @Story(value = "Страница Интро")
+    @Story(value = "РЎС‚СЂР°РЅРёС†Р° РРЅС‚СЂРѕ")
     @Parameters("docVY")
     @Test()
-    @Description(value = "Заполнение полей: ВУ")
+    @Description(value = "Р—Р°РїРѕР»РЅРµРЅРёРµ РїРѕР»РµР№: Р’РЈ")
     public void searchVy(String docVY) {
         new IntroPage(driver).inputFieldLicenceDriverAndClickSerch(docVY);
     }
 
-    @Story(value = "Страница Интро")
+    @Story(value = "РЎС‚СЂР°РЅРёС†Р° РРЅС‚СЂРѕ")
     @Parameters({"docSTS", "docVY"})
     @Test()
-    @Description(value = "Заполнение полей: СТС и ВУ")
+    @Description(value = "Р—Р°РїРѕР»РЅРµРЅРёРµ РїРѕР»РµР№: РЎРўРЎ Рё Р’РЈ")
     public void searchBothDoc(String docSTS, String docVY) {
         new IntroPage(driver).inputBothField(docSTS,docVY);
     }
 
-    @Story(value = "Страница Интро")
+    @Story(value = "РЎС‚СЂР°РЅРёС†Р° РРЅС‚СЂРѕ")
     @Parameters("numberUIN")
     @Test()
-    @Description(value = "Заполнение полей: УИН")
+    @Description(value = "Р—Р°РїРѕР»РЅРµРЅРёРµ РїРѕР»РµР№: РЈРРќ")
     public void searchUin(String numberUIN) {
         new IntroPage(driver).searchForUin(numberUIN);
     }

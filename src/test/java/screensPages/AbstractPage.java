@@ -30,7 +30,7 @@ public class AbstractPage {
         element.isDisplayed();
         String textField = getValue(by,5);
         textField = textField.replaceAll("\\D", "");
-        Assert.assertEquals(text, textField, "Введенное значние не равно отображаемому: " + text + " и " + textField);
+        Assert.assertEquals(text, textField, "Р’РІРµРґРµРЅРЅРѕРµ Р·РЅР°С‡РЅРёРµ РЅРµ СЂР°РІРЅРѕ РѕС‚РѕР±СЂР°Р¶Р°РµРјРѕРјСѓ: " + text + " Рё " + textField);
     }
 
     public String getValue(By by, int time){

@@ -43,49 +43,49 @@ public class MenuAct {
 
 
     @Test()
-    @Description(value = "Проверка штрафов")
+    @Description(value = "РџСЂРѕРІРµСЂРєР° С€С‚СЂР°С„РѕРІ")
     public void openCheckFinesBtn() {
         MenuPage menuPage = new MenuPage(driver);
         menuPage.clickCheckFinesBtn();
     }
 
     @Test()
-    @Description(value = "Проверка штрафов по УИН ")
+    @Description(value = "РџСЂРѕРІРµСЂРєР° С€С‚СЂР°С„РѕРІ РїРѕ РЈРРќ ")
     public void openPaidForNumberUin() {
         MenuPage menuPage = new MenuPage(driver);
         menuPage.clickPaidForNumberUinBtn();
     }
 
     @Test()
-    @Description(value = "История платежей")
+    @Description(value = "РСЃС‚РѕСЂРёСЏ РїР»Р°С‚РµР¶РµР№")
     public void openHistoryPay() {
         MenuPage menuPage = new MenuPage(driver);
         menuPage.clickHistoryPay();
     }
 
     @Test()
-    @Description(value = "Открытие Водители и ТС")
+    @Description(value = "РћС‚РєСЂС‹С‚РёРµ Р’РѕРґРёС‚РµР»Рё Рё РўРЎ")
     public void openDriversAndCars() {
         MenuPage menuPage = new MenuPage(driver);
         menuPage.clickDriversAndCarsBtn();
     }
 
     @Test()
-    @Description(value = "Открытие Банковская карта")
+    @Description(value = "РћС‚РєСЂС‹С‚РёРµ Р‘Р°РЅРєРѕРІСЃРєР°СЏ РєР°СЂС‚Р°")
     public void openBankCard() {
         MenuPage menuPage = new MenuPage(driver);
         menuPage.clickBankCardBtn();
     }
 
     @Test()
-    @Description(value = "Помощь")
+    @Description(value = "РџРѕРјРѕС‰СЊ")
     public void openHelp() {
         MenuPage menuPage = new MenuPage(driver);
         menuPage.clickHelpBtn();
     }
 
     @Test()
-    @Description(value = "Открытие Консультация юриста")
+    @Description(value = "РћС‚РєСЂС‹С‚РёРµ РљРѕРЅСЃСѓР»СЊС‚Р°С†РёСЏ СЋСЂРёСЃС‚Р°")
     public void openJurist() {
         MenuPage menuPage = new MenuPage(driver);
         menuPage.clickJuristBtn();
@@ -93,21 +93,21 @@ public class MenuAct {
     }
 
     @Test()
-    @Description(value = "Открытие Оценить приложение")
+    @Description(value = "РћС‚РєСЂС‹С‚РёРµ РћС†РµРЅРёС‚СЊ РїСЂРёР»РѕР¶РµРЅРёРµ")
     public void openRateApp() {
         MenuPage menuPage = new MenuPage(driver);
         menuPage.clickRateAppBtn();
     }
 
     @Test()
-    @Description(value = "Открытие Поделиться")
+    @Description(value = "РћС‚РєСЂС‹С‚РёРµ РџРѕРґРµР»РёС‚СЊСЃСЏ")
     public void openShare() {
         MenuPage menuPage = new MenuPage(driver);
         menuPage.clickShareBtn();
     }
 
     @Test()
-    @Description(value = "Открытие Другие приложения")
+    @Description(value = "РћС‚РєСЂС‹С‚РёРµ Р”СЂСѓРіРёРµ РїСЂРёР»РѕР¶РµРЅРёСЏ")
     public void openAnotherAppBtn() {
         MenuPage menuPage = new MenuPage(driver);
         menuPage.clickAnotherAppBtn();
