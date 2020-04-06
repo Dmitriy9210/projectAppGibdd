@@ -5,12 +5,10 @@ import gibdd.DriverManager;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.qameta.allure.Description;
-import io.qameta.allure.Story;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import screensPages.IntroPage;
 import screensPages.MenuPage;
 
 import java.net.MalformedURLException;
@@ -31,6 +29,7 @@ public class MenuAct {
 
     @AfterMethod()
     public void nextTest() {
+        driverManager.takeScreenShot();
         driverManager.nextTest();
     }
 
@@ -87,6 +86,7 @@ public class MenuAct {
     public void openJurist() {
         MenuPage menuPage = new MenuPage(driver);
         menuPage.clickJuristBtn();
+
     }
 
     @Test()
