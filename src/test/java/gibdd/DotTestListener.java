@@ -7,13 +7,13 @@ import org.testng.TestListenerAdapter;
 
 public class DotTestListener extends TestListenerAdapter {
 
-    private AppiumDriver<MobileElement> driver;
+//    private AppiumDriver<MobileElement> driver;
 
     @Override
     public void onTestFailure(ITestResult tr) {
         System.out.print("Тест Завален ");
-        DriverManager driverManager =new DriverManager(driver);
-                driverManager.takeScreenShot();
+        DriverManager driverManager = new DriverManager(DriverManager.driver);
+        driverManager.takeScreenShot();
     }
 
     @Override

@@ -26,7 +26,7 @@ public class MenuPage extends AbstractPage {
 
 
     public void waitBtnMenu() { //находим кнопку Меню
-        waitElement(menuBtn, 90);
+        waitElement(menuBtn, 120);
     }
 
     public void clickBtnMenu() { //находим кнопку Меню

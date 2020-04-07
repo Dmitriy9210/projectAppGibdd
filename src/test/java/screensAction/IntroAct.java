@@ -1,6 +1,7 @@
 package screensAction;
 
 import com.sun.org.apache.xml.internal.utils.URI;
+import gibdd.DotTestListener;
 import gibdd.DriverManager;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -11,6 +12,7 @@ import screensPages.MenuPage;
 
 import java.net.MalformedURLException;
 
+@Listeners({DotTestListener.class})
 
 public class IntroAct {
     private AppiumDriver<MobileElement> driver;

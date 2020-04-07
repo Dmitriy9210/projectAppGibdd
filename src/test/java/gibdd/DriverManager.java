@@ -8,6 +8,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.ITestResult;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,16 +18,13 @@ import java.net.URL;
 public class DriverManager {
 
 
-    private AppiumDriver<MobileElement> driver;
+    public static AppiumDriver<MobileElement> driver;
 
     public DriverManager(AppiumDriver<MobileElement> driver) {
-        this.driver = driver;
-    }
-    public DriverManager() {
-
+        DriverManager.driver = driver;
     }
 
-    public void setUp() throws MalformedURLException {
+    public static void setUp() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9.0");
@@ -34,7 +32,7 @@ public class DriverManager {
         caps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.oplatagosuslug.gibdd");
         caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "MainActivity");
         caps.setCapability(MobileCapabilityType.APP, "D:\\joba\\app-debug.apk");
-        caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "250");
+        caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "1250");
         URL appiumURL = new URL("http://localhost:4723/wd/hub");
 
         driver = new AppiumDriver<MobileElement>(appiumURL, caps);
